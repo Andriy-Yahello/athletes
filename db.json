@@ -1,4 +1,4 @@
-{
+[
     {
         {"name":"Jan Frodeno", "country": "DEU", "time": "08:06:30"},
         {"name":"Sebastian Kienle", "country": "DEU", "time": "08:10:02"},
@@ -6,4 +6,4 @@
         {"name":"Ben Hoffman", "country": "USA", "time": "08:13:00"},
         {"name":"Andi Boecherer", "country": "DEU", "time": "08:13:25"}
     }
-}
+]
