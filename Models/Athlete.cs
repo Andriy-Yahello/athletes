@@ -9,6 +9,7 @@ namespace Test.api.Models
 {
     public class Athlete
     {
+        public int ID {get; set;}
         public string Name {get; set;}
         public string Country {get; set;}
         public DateTime Time {get; set;}

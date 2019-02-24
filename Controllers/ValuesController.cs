@@ -16,10 +16,33 @@ namespace Test.api.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Athlete>> Get()
         {
-            return new Athlete[] 
-            { 
-               new Athlete { Name = "a", Country = "b", Time = new DateTime(1979, 07, 28,08,06,30)}
-            };
+            var list = new List<Athlete>();
+            using (var db = new AthleteContext())
+            {
+                //db.Athletes.Remove(db.Athletes.Where(_ => _.Name == "a").FirstOrDefault());
+                
+                if (db.Athletes == null || !db.Athletes.Where(_ => _.Name == "a").Any())
+                    db.Athletes.Add(new Athlete { Name = "a", Country = "b", Time = new DateTime(1979, 07, 28,08,06,30)});
+                
+                var count = db.SaveChanges();
+                Console.WriteLine("{0} records saved to database", count);
+
+                Console.WriteLine();
+                Console.WriteLine("All blogs in database:");
+                foreach (var blog in db.Athletes)
+                {
+                    Console.WriteLine("blog.Time - {0}", blog.Time);
+                }
+
+               list = db.Athletes.ToList();
+            }
+
+            return list;
+            
+            // return new Athlete[] 
+            // { 
+            //    new Athlete { Name = "a", Country = "b", Time = new DateTime(1979, 07, 28,08,06,30)}
+            // };
         }
 
         // GET api/values/5
