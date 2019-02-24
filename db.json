@@ -1,5 +1,5 @@
 {
-    "athletes":[
+    "athletes": [
         {"name":"Jan Frodeno", "country": "DEU", "time": "08:06:30"},
         {"name":"Sebastian Kienle", "country": "DEU", "time": "08:10:02"},
         {"name":"Patrick Lange", "country": "DEU", "time": "08:11:14"},
